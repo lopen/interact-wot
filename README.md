@@ -1,12 +1,12 @@
 # interact-wot
 
+> Contains spoilers for the entire Wheel of Time series!
+
 An interactive web application written in Python.
 
 interact-wot is an interactive map of the Westlands in the Third Age, from the Wheel of Time series.
 
 The web app is essentially a Folium map with markers highlighting points of interest along with descriptions of locations.
-
-> Contains spoilers for the entire Wheel of Time series!
 
 **NOTE:** *The map was created by [Dimension Door](https://linktr.ee/dimensiondoormaps) and the information for the markers were found on the [WoT Fandom Wiki](https://wot.fandom.com/wiki/).*
 
