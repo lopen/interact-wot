@@ -14,4 +14,4 @@ The web app is essentially a Folium map with markers highlighting points of inte
 
 Still developing the app, the basics are down, now the markers.json file has to be filled with information and the coordinates for the different locations have to be found so the map can generate the markers in the right place with the right information.
 
-> Check out [trygveulsnes.com](trygveulsnes.com:5000) to see the map in action!
+**Check out [trygveulsnes.com](trygveulsnes.com:5000) to see the map in action!**
