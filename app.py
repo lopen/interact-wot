@@ -11,12 +11,6 @@ max_lot = 180
 
 markers = json.load(open('markers.json'))
 
-markers2 = {
-    0: [[42,42],"<i>Saldaea</i>",'Saldaea'],
-    1: [[0,0],"<i>Kandor</i>",'Kandor'],
-    2: [[-42,-42],"<i>Shienar</i>",'Shienar']
-}
-
 @app.route('/')
 def render_the_map():
     folium_map = folium.Map(
@@ -33,9 +27,6 @@ def render_the_map():
         image='./wot.jpeg',
         bounds=[[min_lat, min_lot], [max_lat, max_lot]]).add_to(folium_map)
 
-    #for id, marker in markers.items():
-     #   folium.Marker(marker[0], popup=marker[1], tooltip=marker[2]).add_to(folium_map)
-    
     for marker in markers['poi']:
         iframe = folium.IFrame(marker['info'])                     # | to get bigger info box
         popup = folium.Popup(iframe, min_width=500, max_width=500) # |
