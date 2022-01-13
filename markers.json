@@ -7,7 +7,8 @@
             "location": [
                 55,
                 5
-            ]
+            ],
+            "size": "<svg width=\"30\" height=\"30\"><rect width=\"30\" height=\"30\" opacity=\".9\" /></svg>"
         },
         {
             "id":2, 
@@ -16,16 +17,18 @@
             "location": [
                 60,
                 40
-            ]
+            ],
+            "size": "<svg width=\"30\" height=\"30\"><rect width=\"30\" height=\"30\" opacity=\".9\" /></svg>"
         },
         {
             "id":3, 
-            "name":"Falme",
+            "name":"Tar Valon",
             "info":"",
             "location": [
-		45.798,
-                73.257
-            ]
+		        45.058,
+                71.279
+            ],
+            "size": "<svg width=\"90\" height=\"60\"><rect width=\"90\" height=\"60\" opacity=\"0.5\" /></svg>"
         }
     ]
 }
