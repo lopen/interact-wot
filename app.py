@@ -15,7 +15,7 @@ markers = json.load(open('markers.json'))
 def render_the_map():
     folium_map = folium.Map(
         tiles='None',
-        attr='Wheel of Time Map, drawn by Dimension Door 2021, site by @trgyve',
+        attr='Wheel of Time Map, drawn by <a href="https://linktr.ee/dimensiondoormaps" target="_blank">Dimension Door</a>, site by <a href="https://github.com/lopen/interact-wot" target="_blank">@trgyve</a>',
         height='80%',
         width='100%',
         max_bounds=True,
