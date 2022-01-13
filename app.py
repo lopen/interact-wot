@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import folium, json
-from folium.plugins import MousePosition
+from folium.plugins import MousePosition, Fullscreen
 
 app = Flask(__name__)
 
@@ -10,6 +10,7 @@ min_lot = -180
 max_lot = 180
 
 markers = json.load(open('markers.json'))
+groups = folium.FeatureGroup(name="Map")
 
 @app.route('/')
 def render_the_map():
@@ -30,7 +31,11 @@ def render_the_map():
     for marker in markers['poi']:
         iframe = folium.IFrame(marker['info'])                     # | to get bigger info box
         popup = folium.Popup(iframe, min_width=500, max_width=500) # |
-        folium.Marker(marker['location'], popup=popup, tooltip=marker['name']).add_to(folium_map)
+        folium.Marker(
+            marker['location'], 
+            popup=popup, 
+            tooltip=marker['name'],
+            icon=folium.DivIcon(html=f"{marker['size']}")).add_to(folium_map)
 
     formatter = "function(num) {return L.Util.formatNum(num, 3) + ' º ';};"
 
@@ -43,6 +48,13 @@ def render_the_map():
         prefix="Coordinates:",
         lat_formatter=formatter,
         lng_formatter=formatter
+    ).add_to(folium_map)
+
+    Fullscreen(
+        position="topleft",
+        title="Full Screen",
+        title_cancel="Exit Full Screen",
+        force_separate_button=True
     ).add_to(folium_map)
 
     return folium_map._repr_html_()
