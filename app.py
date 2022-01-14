@@ -17,7 +17,7 @@ def render_the_map():
     folium_map = folium.Map(
         tiles='None',
         attr='Wheel of Time Map, drawn by <a href="https://linktr.ee/dimensiondoormaps" target="_blank">Dimension Door</a>, site by <a href="https://github.com/lopen/interact-wot" target="_blank">@trgyve</a>',
-        height='80%',
+        height='100%',
         width='100%',
         max_bounds=True,
         min_zoom=3,
@@ -56,6 +56,11 @@ def render_the_map():
         title_cancel="Exit Full Screen",
         force_separate_button=True
     ).add_to(folium_map)
+
+    title = '<title>interact-wot</title>'
+    folium_map.get_root().header.add_child(folium.Element(title))
+
+    folium_map.save('output')
 
     return folium_map._repr_html_()
 
